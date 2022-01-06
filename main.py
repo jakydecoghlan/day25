@@ -29,4 +29,16 @@ data = pandas.read_csv("weather_data.csv")
 # print(data["temp"].max())
 max_temp = data.temp.max()
 
-print(data[data.temp == max_temp])
+monday = data[data.day == "Monday"]
+monday_temp_farenheit = ((monday.temp) * 9/5) + 32
+print(monday_temp_farenheit)
+
+# create dataframe
+
+data_dict = {
+    "personas": ["juancito", "pablito", "josecito"],
+    "edades": [12, 11, 9]
+
+}
+data = pandas.DataFrame(data_dict)
+data.to_csv("nuevo_dataframe")
